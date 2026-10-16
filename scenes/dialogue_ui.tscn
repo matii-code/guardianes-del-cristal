@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://uu2ogim4hy2v"]
+
+[ext_resource type="Script" uid="uid://8ikpc0a0w4m8" path="res://scripts/dialogue_ui.gd" id="1_dwk8m"]
+
+[node name="DialogueUI" type="CanvasLayer" unique_id=591081461]
+script = ExtResource("1_dwk8m")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1947208207]
+offset_right = 920.0
+offset_bottom = 85.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(130, 520)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=736096928]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=2055527238]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(15, 0)
+text = "Han Solo"
+
+[node name="DialogueLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1818870056]
+custom_maximum_size = Vector2(700, 100)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(15, 0)
+text = "Welcome Sir"
+autowrap_mode = 3
+
+[node name="ContinueButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=522322765]
+layout_mode = 2
+text = "Continue..."

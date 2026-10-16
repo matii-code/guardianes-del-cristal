@@ -15,6 +15,10 @@ run/main_scene="uid://bs3r2730ibpcy"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+QuestManager="*uid://cimsjcl4lrkb3"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -23,6 +27,7 @@ window/stretch/aspect="expand"
 [global_group]
 
 player=""
+enemies=""
 
 [input]
 

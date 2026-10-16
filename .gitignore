@@ -1,3 +1,8 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Ejecutables exportados y archivos temporales de Godot
+*.exe
+*.pck
+*.tmp
