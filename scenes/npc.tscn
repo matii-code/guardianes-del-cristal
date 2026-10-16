@@ -63,5 +63,13 @@ position = Vector2(-3.0000002, 4.0000005)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("CapsuleShape2D_iupvx")
 
-[connection signal="body_entered" from="InteractiveArea" to="." method="_on_interactive_area_body_entered"]
-[connection signal="body_exited" from="InteractiveArea" to="." method="_on_interactive_area_body_exited"]
+[node name="HintLabel" type="Label" parent="."]
+offset_left = -80.0
+offset_top = -95.0
+offset_right = 80.0
+offset_bottom = -65.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 18
+text = "[E] Hablar"
+horizontal_alignment = 1

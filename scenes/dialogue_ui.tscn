@@ -30,4 +30,4 @@ autowrap_mode = 3
 
 [node name="ContinueButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=522322765]
 layout_mode = 2
-text = "Continue..."
+text = "Continuar (E)"

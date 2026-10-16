@@ -1,32 +1,30 @@
 extends Node2D
 
-var crystals_collected: int = 0
-var total_crystals: int = 0
-
 @onready var crystal_label: Label = \
 	$UI/HUD/CrystalLabel
 
 func _ready() -> void:
-	var crystals := $crystals.get_children()
+	# La misión pide tantos cristales como haya en el mapa
+	QuestManager.required_crystals = $crystals.get_child_count()
 
-	total_crystals = crystals.size()
-
-	for crystal in crystals:
-		crystal.collected.connect(
-			_on_crystal_collected
-		)
+	# El texto se actualiza cada vez que cambia la misión
+	QuestManager.quest_updated.connect(update_crystal_label)
 
 	update_crystal_label()
-
-func _on_crystal_collected() -> void:
-	crystals_collected += 1
-	update_crystal_label()
-
-	if crystals_collected >= total_crystals:
-		print("¡Todos los cristales recolectados!")
 
 func update_crystal_label() -> void:
-	crystal_label.text = "Cristales: %d / %d" % [
-		crystals_collected,
-		total_crystals
-	]
+	match QuestManager.quest_state:
+		QuestManager.QuestState.NOT_STARTED:
+			crystal_label.text = "Misión: habla con el anciano (E)"
+		QuestManager.QuestState.ACTIVE:
+			crystal_label.text = "Cristales: %d / %d" % [
+				QuestManager.collected_crystals,
+				QuestManager.required_crystals
+			]
+		QuestManager.QuestState.READY_TO_DELIVER:
+			crystal_label.text = "Cristales: %d / %d - ¡Vuelve con el anciano!" % [
+				QuestManager.collected_crystals,
+				QuestManager.required_crystals
+			]
+		QuestManager.QuestState.COMPLETED:
+			crystal_label.text = "¡Misión completada!"

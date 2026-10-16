@@ -1187,7 +1187,3 @@ offset_bottom = 54.0
 text = "Cristales: 0/3"
 
 [node name="DialogueUI" parent="." unique_id=591081461 instance=ExtResource("9_85g3d")]
-
-[connection signal="collected" from="crystals/crystal" to="." method="_on_crystal_collected"]
-[connection signal="collected" from="crystals/crystal2" to="." method="_on_crystal_collected"]
-[connection signal="collected" from="crystals/crystal3" to="." method="_on_crystal_collected"]

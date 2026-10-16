@@ -203,6 +203,3 @@ offset_top = -71.666664
 offset_right = 33.333336
 offset_bottom = -44.666664
 value = 100.0
-
-[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_body_entered"]
-[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_body_exited"]
